@@ -16,7 +16,7 @@
     "db:status": "node --env-file-if-exists=.env --import tsx src/db/migrate.ts status",
     "db:seed": "node --env-file-if-exists=.env --import tsx src/db/seed.ts",
     "db:reset": "node --env-file-if-exists=.env --import tsx src/db/migrate.ts down && node --env-file-if-exists=.env --import tsx src/db/migrate.ts up && node --env-file-if-exists=.env --import tsx src/db/seed.ts",
-    "clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true});fs.rmSync('tsconfig.tsbuildinfo',{force:true})\""
+    "clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\""
   },
   "dependencies": {
     "@cinelndex/shared": "workspace:*",

@@ -89,7 +89,7 @@ pnpm dev
 | `pnpm db:reset` | 删库重建 + 重新灌数据，**仅开发环境** |
 | `pnpm --filter @cinelndex/server db:status` | 查看迁移状态 |
 | `pnpm --filter @cinelndex/server test` | 接口回归测试（无需数据库） |
-| `pnpm clean` | 删除各包的 `dist` 与根 `node_modules` |
+| `pnpm run clean` | 删除各包的 `dist` 与根 `node_modules` |
 
 > 清理脚本用 Node 自带的 `fs.rmSync`，没有引入 `rimraf` 之类的额外依赖。
 
@@ -151,6 +151,7 @@ curl.exe -s -X POST http://localhost:4000/api/v1/movies `
 
 ## 已知限制
 
+- 还没有配置代码检查工具（ESLint / Prettier）。接入后建议在各包加 `lint` 脚本，根脚本用 `pnpm run --recursive --if-present lint` 汇总。
 - 迁移器只支持向上迁移；`db:rollback` 的做法是删除 public schema 后重跑，仅限开发环境。
 - 鉴权、限流、分页游标、软删除都还没做，属于脚手架预留的扩展点。
 - 前端使用 `BrowserRouter`，部署到静态服务器时需要在服务端配置 history fallback（所有未知路径回落到 `index.html`）。

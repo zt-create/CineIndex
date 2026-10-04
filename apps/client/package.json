@@ -9,7 +9,7 @@
     "build": "tsc -p tsconfig.json --noEmit && vite build",
     "preview": "vite preview --port 4173",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true});fs.rmSync('tsconfig.tsbuildinfo',{force:true})\""
+    "clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\""
   },
   "dependencies": {
     "@cinelndex/shared": "workspace:*",

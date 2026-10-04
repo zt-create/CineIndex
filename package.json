@@ -19,7 +19,6 @@
     "build": "pnpm run build:shared && pnpm --filter @cinelndex/server build && pnpm --filter @cinelndex/client build",
     "build:shared": "pnpm --filter @cinelndex/shared build",
     "typecheck": "pnpm run --recursive --if-present typecheck",
-    "lint": "pnpm run --recursive --if-present lint",
     "clean": "pnpm run --recursive --if-present clean && node -e \"fs.rmSync('node_modules',{recursive:true,force:true})\""
   },
   "devDependencies": {

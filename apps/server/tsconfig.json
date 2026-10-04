@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node"],
+    /* 服务端是被运行的产物，不需要给外部消费，就不生成 .d.ts。 */
+    "declaration": false,
+    "declarationMap": false,
+    "tsBuildInfoFile": "node_modules/.cache/tsconfig.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts"]
+}

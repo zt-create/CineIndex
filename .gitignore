@@ -1,0 +1,34 @@
+# 依赖
+node_modules/
+.pnpm-store/
+
+# 构建产物
+dist/
+build/
+*.tsbuildinfo
+
+# 环境变量（示例文件 .env.example 需要提交）
+.env
+.env.local
+.env.*.local
+
+# 日志
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# 编辑器与系统
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# 测试与缓存
+coverage/
+.vite/
+.cache/
+
+# 本地临时 PostgreSQL 数据目录（initdb 生成，不入库）
+.pgdata*/

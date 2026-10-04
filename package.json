@@ -1,0 +1,28 @@
+{
+  "name": "cinelndex-webapp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cinelndex —— PostgreSQL + Express + React + Node 的 pnpm monorepo",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev": "pnpm run build:shared && pnpm --parallel --filter \"./apps/*\" dev",
+    "dev:client": "pnpm --filter @cinelndex/client dev",
+    "dev:server": "pnpm --filter @cinelndex/server dev",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @cinelndex/server db:migrate",
+    "db:seed": "pnpm --filter @cinelndex/server db:seed",
+    "db:reset": "pnpm --filter @cinelndex/server db:reset",
+    "build": "pnpm run build:shared && pnpm --filter @cinelndex/server build && pnpm --filter @cinelndex/client build",
+    "build:shared": "pnpm --filter @cinelndex/shared build",
+    "typecheck": "pnpm run --recursive --if-present typecheck",
+    "lint": "pnpm run --recursive --if-present lint",
+    "clean": "pnpm run --recursive --if-present clean && node -e \"fs.rmSync('node_modules',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

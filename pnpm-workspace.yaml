@@ -1,0 +1,11 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+# pnpm 10+ 默认不执行依赖的构建脚本（供应链安全）。
+# esbuild（vite / tsx 的底层依赖）需要跑安装脚本才能就位，这里显式放行。
+allowBuilds:
+  esbuild: true
+
+# allowBuilds 变化时 pnpm 会重建 node_modules，这里避免它等待交互确认。
+confirmModulesPurge: false

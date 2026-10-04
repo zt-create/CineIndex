@@ -1,0 +1,27 @@
+{
+  "name": "@cinelndex/client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cinelndex React + Vite 前端",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "preview": "vite preview --port 4173",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true});fs.rmSync('tsconfig.tsbuildinfo',{force:true})\""
+  },
+  "dependencies": {
+    "@cinelndex/shared": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}
